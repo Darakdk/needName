@@ -33,7 +33,6 @@ public class Enemy : MonoBehaviour {
 	[SerializeField]
 	LayerMask playerMask;
 	private RaycastHit hit;
-    private GameObject cagoEndios;
     // Use this for initialization
     void Start()
     {
