@@ -41,6 +41,7 @@ public class EnemyBossCuboid : MonoBehaviour {
     private float phase2TimerR;
     private float phase2DurR;
     private bool phase2;
+    public GameObject BossDoor;
     // Use this for initialization
     void Start()
     {
@@ -185,6 +186,7 @@ public class EnemyBossCuboid : MonoBehaviour {
             if (hp <= 0)
             {
                 Destroy(col.gameObject);
+                BossDoor.SetActive(false);
                 Destroy(this.gameObject);
             }
         }

@@ -132,16 +132,18 @@ public class Character : MonoBehaviour
     {
         if (col.gameObject.layer == 10 || col.gameObject.layer == LayerMask.NameToLayer("enemyBullet"))
         {
-			isAlive = false;
-			playerRenderer.SetActive (false);
-			cannonRenderer.SetActive (false);
-			Instantiate(playerDeathEffect, transform.position, transform.rotation);
-			playerDeathScreen.SetActive (true);
-			this.gameObject.SetActive (false);
+            isAlive = false;
+            playerRenderer.SetActive(false);
+            cannonRenderer.SetActive(false);
+            Instantiate(playerDeathEffect, transform.position, transform.rotation);
+            playerDeathScreen.SetActive(true);
+            this.gameObject.SetActive(false);
         }
-
+        if (col.gameObject.layer == 13 || col.gameObject.layer == LayerMask.NameToLayer("goal")) // Colisión con el orbe dorado
+        {
+            isAlive = false;
+        }
     }
-
     
 
 

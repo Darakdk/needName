@@ -131,11 +131,11 @@ public class Enemy : MonoBehaviour {
             if (hp <= 0)
             {
                 Destroy(col.gameObject);
-                Destroy(this.gameObject);
+                this.gameObject.SetActive(false);
 
                 if(enemyId==2)
                 {
-                    Instantiate(miniEnemy, transform.position-Vector3.forward*2, transform.rotation);
+                    Instantiate(miniEnemy, transform.position - Vector3.forward * 2, transform.rotation);
                     Instantiate(miniEnemy, transform.position - Vector3.forward * 1, transform.rotation);
                     Instantiate(miniEnemy, transform.position + Vector3.forward * 2, transform.rotation);
                     Instantiate(miniEnemy, transform.position + Vector3.forward * 1, transform.rotation);
