@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour {
 	[SerializeField]
 	LayerMask playerMask;
 	private RaycastHit hit;
-    public static int score;
+    public static int score = 100;
 
     // Use this for initialization
     void Start()
@@ -133,6 +133,7 @@ public class Enemy : MonoBehaviour {
             if (hp <= 0)
             {
                 Destroy(col.gameObject);
+                sceneController.overallScore = sceneController.overallScore + score; // Adds this enemy's score poits to overall before dying.
                 this.gameObject.SetActive(false);
 
                 if(enemyId==2)

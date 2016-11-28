@@ -26,7 +26,6 @@ public class Character : MonoBehaviour
     private bool dobleJump;
     public int fallDelay;
     public static Vector3 playerPosition;
-    public static int playerScore = 0;
     // Use this for initialization
     void Start()
     {
