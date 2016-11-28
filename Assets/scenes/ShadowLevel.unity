@@ -551,6 +551,7 @@ MonoBehaviour:
   playerDeathEffect: {fileID: 1000010050371266, guid: a74a627c6880edc4284059d8227a4060,
     type: 2}
   playerDeathScreen: {fileID: 241450731}
+  playerWinScreen: {fileID: 183130773}
   fallDelay: 10
   positionEdit: {x: 0, y: 0, z: 0}
   groundMask:

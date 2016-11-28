@@ -16,6 +16,7 @@ public class Character : MonoBehaviour
 	public GameObject cannonRenderer;
 	public GameObject playerDeathEffect;
 	public GameObject playerDeathScreen;
+    public GameObject playerWinScreen;
     private bool keyRigth;
     private bool keyLeft;
     private bool grounded;
@@ -45,15 +46,18 @@ public class Character : MonoBehaviour
     {
 
         //This is the Rotation
-        Plane playerPlane = new Plane(Vector3.right, transform.position);
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        float hitdist = 0.0f;
-        playerPosition = transform.position;
-        if (playerPlane.Raycast(ray, out hitdist))
+        if (isAlive)
         {
-            targetPoint = ray.GetPoint(hitdist);
-            Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position, Vector3.right);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            Plane playerPlane = new Plane(Vector3.right, transform.position);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            float hitdist = 0.0f;
+            playerPosition = transform.position;
+            if (playerPlane.Raycast(ray, out hitdist))
+            {
+                targetPoint = ray.GetPoint(hitdist);
+                Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position, Vector3.right);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            }
         }
 
         checkGround();
@@ -144,13 +148,17 @@ public class Character : MonoBehaviour
             playerDeathScreen.SetActive(true);
             gameObject.SetActive(false);
         }
+    }
+    
+    void OnTriggerEnter(Collider col)
+    {
         if (col.gameObject.layer == 13 || col.gameObject.layer == LayerMask.NameToLayer("goal")) // Colisión con el orbe dorado
         {
+            playerWinScreen.SetActive(true);
+            myBody.velocity = new Vector3(0, 0, 0);
             isAlive = false;
         }
     }
-    
-
 
 
 }
