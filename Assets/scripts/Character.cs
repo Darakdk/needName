@@ -142,7 +142,7 @@ public class Character : MonoBehaviour
             cannonRenderer.SetActive(false);
             Instantiate(playerDeathEffect, transform.position, transform.rotation);
             playerDeathScreen.SetActive(true);
-            this.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
         if (col.gameObject.layer == 13 || col.gameObject.layer == LayerMask.NameToLayer("goal")) // Colisión con el orbe dorado
         {
