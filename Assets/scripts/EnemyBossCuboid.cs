@@ -42,6 +42,8 @@ public class EnemyBossCuboid : MonoBehaviour {
     private float phase2DurR;
     private bool phase2;
     public GameObject BossDoor;
+    public static int score;
+
     // Use this for initialization
     void Start()
     {
