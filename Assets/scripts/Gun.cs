@@ -23,33 +23,35 @@ public class Gun : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //This is the shooting
-        if (Input.GetMouseButtonDown(0))
-        {
-            //Left Click
-            if (canShoot >= cooldown){
-                Instantiate(bullet, transform.position, transform.rotation);
-                canShoot = 0;
-				normalEffect.Play();
-				audioEmitter.PlayOneShot (shot);
-            }
-        }
-
-        if (Input.GetMouseButtonDown(1)) {
+        if (Character.isAlive) {
+            if (Input.GetMouseButtonDown(0))
             {
-                Instantiate(curvingBullet, transform.position, transform.rotation);
-				curvingEffect.Play();
-				audioEmitter.PlayOneShot (shotHeavy);
+                //Left Click
+                if (canShoot >= cooldown) {
+                    Instantiate(bullet, transform.position, transform.rotation);
+                    canShoot = 0;
+                    normalEffect.Play();
+                    audioEmitter.PlayOneShot(shot);
+                }
             }
-        }
-        //Right Click
-        
 
-        if (Input.GetMouseButtonDown(2)) { }
-        //Middle Click
+            if (Input.GetMouseButtonDown(1)) {
+                {
+                    Instantiate(curvingBullet, transform.position, transform.rotation);
+                    curvingEffect.Play();
+                    audioEmitter.PlayOneShot(shotHeavy);
+                }
+            }
+            //Right Click
 
-        if (canShoot < 1)
-        {
-            canShoot = canShoot + Time.deltaTime;
+
+            if (Input.GetMouseButtonDown(2)) { }
+            //Middle Click
+
+            if (canShoot < 1)
+            {
+                canShoot = canShoot + Time.deltaTime;
+            }
         }
     }
 }
