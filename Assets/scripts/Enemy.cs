@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour {
     protected float distanceToPlayer;
     public int enemyId;
     public int hp = 1;
+    private int initialhp;
     public float jumpDelay;
     private float jumpDelayR;
     private bool doJump;
@@ -34,6 +35,9 @@ public class Enemy : MonoBehaviour {
 	LayerMask playerMask;
 	private RaycastHit hit;
     public static int score;
+    private Vector3 initialPos;
+
+    public int checkpointNumber = 0;
 
     // Use this for initialization
     void Start()
@@ -47,6 +51,10 @@ public class Enemy : MonoBehaviour {
         doJump = false;
         player = Character.playerPosition;
 		hasDirectVision = false;
+        initialPos = transform.position;
+        initialhp = hp;
+
+        levelRestart.addEnemy(this);
     }
 
     // Update is called once per frame
@@ -133,7 +141,7 @@ public class Enemy : MonoBehaviour {
             if (hp <= 0)
             {
                 Destroy(col.gameObject);
-                this.gameObject.SetActive(false);
+                gameObject.SetActive(false);
 
                 if(enemyId==2)
                 {
@@ -161,5 +169,15 @@ public class Enemy : MonoBehaviour {
                 groundMask));
 
 
+    }
+
+    public void returnToStart()
+    {
+        transform.position = initialPos;
+        if(Character.myChekPoint <= checkpointNumber)
+        {
+            gameObject.SetActive(true);
+            hp = initialhp;
+        }
     }
 }

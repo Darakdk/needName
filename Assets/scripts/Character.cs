@@ -27,6 +27,10 @@ public class Character : MonoBehaviour
     public int fallDelay;
     public static Vector3 playerPosition;
     public static int playerScore = 0;
+    public static Vector3 position;
+    public Vector3 positionEdit;
+
+    public static int myChekPoint=0;
     // Use this for initialization
     void Start()
     {
@@ -34,6 +38,7 @@ public class Character : MonoBehaviour
         delayWorking = 0;
         dobleJump = false;
         playerPosition = transform.position;
+        position = positionEdit;
     }
 
     void FixedUpdate()
