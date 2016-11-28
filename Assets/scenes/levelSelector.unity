@@ -211,6 +211,8 @@ MonoBehaviour:
     unlocked: 1
   - levelText: Puzzlelevel
     unlocked: 1
+  - levelText: ShadowLevel
+    unlocked: 1
 --- !u!4 &361054218
 Transform:
   m_ObjectHideFlags: 0
