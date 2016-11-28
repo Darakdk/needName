@@ -4,7 +4,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class levelButton : MonoBehaviour {
-
 	public Text levelText;
 	public bool unlocked;
 	public Text levelNum;
@@ -13,5 +12,4 @@ public class levelButton : MonoBehaviour {
 	{
 		SceneManager.LoadScene (levelText.text, LoadSceneMode.Single);
 	}
-
 }

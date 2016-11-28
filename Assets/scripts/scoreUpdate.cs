@@ -6,6 +6,6 @@ public class scoreUpdate : MonoBehaviour {
     public Text scoreText;
 	
 	void FixedUpdate () {
-        scoreText.text = "Score: "+sceneController.overallScore;
+        scoreText.text = "Score: " + sceneController.overallScore;
 	}
 }
