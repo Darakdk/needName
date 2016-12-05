@@ -38,6 +38,7 @@ public class levelRestart : MonoBehaviour {
 
     public static void addEnemy(Enemy ene)
     {
-        enemyList.Add(ene);
+        if (ene.enemyId != 3)
+            enemyList.Add(ene);
     }
 }

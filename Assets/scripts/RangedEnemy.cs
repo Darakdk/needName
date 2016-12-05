@@ -7,12 +7,13 @@ public class rangedEnemyScr: MonoBehaviour {
     private Enemy sn;
     public float shootRange;
     public GameObject bullet;
-    public GameObject player;
     private Vector3 targetPoint;
     public float fireRate;
     private float fireRateR;
     public int nRate;
     private int nRateR;
+    private Vector3 player;
+
     // Use this for initialization
     void Start () {
         sn = gameObject.GetComponent<Enemy>();
@@ -22,13 +23,14 @@ public class rangedEnemyScr: MonoBehaviour {
 	
     void FixedUpdate()
     {
-        distanceToPlayer = Vector3.Distance(this.transform.position, player.transform.position);
+        player = Character.playerPosition;
+        distanceToPlayer = Vector3.Distance(this.transform.position, player);
 
         if (distanceToPlayer< shootRange && fireRateR == 0)
         {
             //This is the Rotation
             Plane playerPlane = new Plane(Vector3.right, transform.position);
-            targetPoint = player.transform.position;
+            targetPoint = player;
             Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position, Vector3.right);
             Instantiate(bullet, transform.position, targetRotation);
             if (nRateR <= 0)

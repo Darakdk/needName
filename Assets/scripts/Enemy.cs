@@ -75,7 +75,7 @@ public class Enemy : MonoBehaviour {
 				}
 			}
 
-            if (enemyId == 0 || enemyId == 2)
+            if (enemyId == 0 || enemyId == 2 || enemyId == 3)
             {
 				if ((distanceToPlayer < visionRange || (hasDirectVision && distanceToPlayer<directVisionRange)) && this.transform.position.z > player.z + 0.5 && !wallNear)
                 {
@@ -117,7 +117,7 @@ public class Enemy : MonoBehaviour {
             {
                 myBody.velocity -= gravity * Vector3.up;
             }
-            if (enemyId == 0 || enemyId == 2)
+            if (enemyId == 0 || enemyId == 2 || enemyId == 3)
             {
                 if (this.transform.position.y < player.y-1 && grounded && distanceToPlayer < visionRange)
                     doJump = true;   
@@ -150,6 +150,10 @@ public class Enemy : MonoBehaviour {
                     Instantiate(miniEnemy, transform.position + Vector3.forward * 2, transform.rotation);
                     Instantiate(miniEnemy, transform.position + Vector3.forward * 1, transform.rotation);
                 }
+                if(enemyId == 3)
+                {
+                    Destroy(this.gameObject);
+                }
             }
         }
     }
@@ -173,6 +177,10 @@ public class Enemy : MonoBehaviour {
 
     public void returnToStart()
     {
+        if (enemyId == 3)
+        {
+            Destroy(this.gameObject);
+        }
         transform.position = initialPos;
         if(Character.myChekPoint <= checkpointNumber)
         {
