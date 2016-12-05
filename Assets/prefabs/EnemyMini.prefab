@@ -172,7 +172,7 @@ MonoBehaviour:
   visionRange: 50
   rageRange: 3
   gravity: 7
-  enemyId: 0
+  enemyId: 3
   hp: 1
   jumpDelay: 1
   miniEnemy: {fileID: 0}
@@ -183,6 +183,7 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 0
+  checkpointNumber: 0
 --- !u!114 &114000013636025880
 MonoBehaviour:
   m_ObjectHideFlags: 1
