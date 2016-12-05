@@ -4,6 +4,7 @@ using System.Collections;
 public class checkPointSyst : MonoBehaviour {
 
     public int checkPointNum;
+    public static int checkpointScore;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +23,7 @@ public class checkPointSyst : MonoBehaviour {
         {
             Character.myChekPoint = checkPointNum;
             Character.position = transform.position;
+            checkpointScore = sceneController.overallScore;
             gameObject.SetActive(false);
         }
     }
