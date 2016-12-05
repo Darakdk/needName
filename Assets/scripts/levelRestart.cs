@@ -25,6 +25,7 @@ public class levelRestart : MonoBehaviour {
             playerDeathScreen.SetActive(false);
             character.SetActive(true);
             character.transform.position = Character.position;
+            sceneController.overallScore = checkPointSyst.checkpointScore;
             foreach(Enemy enem in enemyList)
             {
                 enem.returnToStart();

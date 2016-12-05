@@ -35,7 +35,6 @@ public class Enemy : MonoBehaviour {
 	LayerMask playerMask;
 	private RaycastHit hit;
     public  int scoreOnDeath;
-    public static int score; 
     private Vector3 initialPos;
 
     public int checkpointNumber = 0;
@@ -43,7 +42,6 @@ public class Enemy : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        score = scoreOnDeath;
         myBody = GetComponent<Rigidbody>();
         baseSpeed = movSpeed;
         rage = false;
@@ -144,9 +142,9 @@ public class Enemy : MonoBehaviour {
             {
                 Destroy(col.gameObject);
                 gameObject.SetActive(false);
-                sceneController.overallScore = sceneController.overallScore + score;
+                sceneController.overallScore += scoreOnDeath;
 
-                if(enemyId==2)
+                if (enemyId==2)
                 {
                     Instantiate(miniEnemy, transform.position - Vector3.forward * 2, transform.rotation);
                     Instantiate(miniEnemy, transform.position - Vector3.forward * 1, transform.rotation);
