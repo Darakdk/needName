@@ -182,6 +182,8 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 0
+  scoreOnDeath: 500
+  checkpointNumber: 0
 --- !u!198 &198000012577757018
 ParticleSystem:
   m_ObjectHideFlags: 1

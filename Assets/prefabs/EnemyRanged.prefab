@@ -165,7 +165,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootRange: 30
   bullet: {fileID: 1000010105330270, guid: a909e04a963526b4d87c725ded8ee7f5, type: 2}
-  player: {fileID: 0}
   fireRate: 30
   nRate: 0
 --- !u!114 &114000013970692126
@@ -199,6 +198,8 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 0
+  scoreOnDeath: 250
+  checkpointNumber: 0
 --- !u!198 &198000012202855142
 ParticleSystem:
   m_ObjectHideFlags: 1

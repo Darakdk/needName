@@ -34,7 +34,8 @@ public class Enemy : MonoBehaviour {
 	[SerializeField]
 	LayerMask playerMask;
 	private RaycastHit hit;
-    public static int score;
+    public  int scoreOnDeath;
+    public static int score; 
     private Vector3 initialPos;
 
     public int checkpointNumber = 0;
@@ -42,6 +43,7 @@ public class Enemy : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        score = scoreOnDeath;
         myBody = GetComponent<Rigidbody>();
         baseSpeed = movSpeed;
         rage = false;

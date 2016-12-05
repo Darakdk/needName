@@ -183,6 +183,7 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 0
+  scoreOnDeath: 25
   checkpointNumber: 0
 --- !u!114 &114000013636025880
 MonoBehaviour:
