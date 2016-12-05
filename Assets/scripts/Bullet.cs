@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour {
         player = Character.playerPosition;
         myBody.velocity = myBody.transform.forward * bulletSpeed;
 
-        if(Physics.Raycast(transform.position, player - transform.position, out hit, Vector3.Distance(myBody.position, player), groundMask))
+        if(Physics.Raycast(transform.position+myBody.transform.forward*2, player, out hit, Vector3.Distance(myBody.position, player), groundMask))
         {
             Instantiate(explosion, transform.position, transform.rotation);
             Destroy(this.gameObject);

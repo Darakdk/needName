@@ -36,6 +36,17 @@ public class CurvingBullet : MonoBehaviour {
         {
             Destroy(this.gameObject);
         }
+        
+    }
+
+    void Update()
+    {
+        if (Physics.Raycast(transform.position, myBody.transform.forward, out hit, bulletSpeed*Time.deltaTime*2, groundMask))
+        {
+            Instantiate(explosion, transform.position, transform.rotation);
+            Destroy(this.gameObject);
+        }
+
         //This is the bullet curving
         Plane playerPlane = new Plane(Vector3.right, Vector3.zero);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -45,16 +56,7 @@ public class CurvingBullet : MonoBehaviour {
             Vector3 targetPoint = ray.GetPoint(hitdist);
             Quaternion targetRotation = Quaternion.LookRotation((targetPoint - transform.position), Vector3.right);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-            transform.Translate(Vector3.forward * bulletSpeed * Time.deltaTime);
-        }
-    }
-
-    void Update()
-    {
-        if (Physics.Raycast(transform.position, myBody.transform.forward, out hit, bulletSpeed*Time.deltaTime*2, groundMask))
-        {
-            Instantiate(explosion, transform.position, transform.rotation);
-            Destroy(this.gameObject);
+            myBody.velocity = transform.forward * bulletSpeed;
         }
     }
     void OnCollisionEnter(Collision collision)

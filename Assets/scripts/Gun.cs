@@ -26,8 +26,8 @@ public class Gun : MonoBehaviour {
         if (Character.isAlive) {
             if (Input.GetMouseButtonDown(0))
             {
-                //Left Click
-                if (canShoot >= cooldown) {
+                    //Left Click
+                    if (canShoot >= cooldown) {
                     Instantiate(bullet, transform.position, transform.rotation);
                     canShoot = 0;
                     normalEffect.Play();
