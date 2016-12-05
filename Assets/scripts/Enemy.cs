@@ -144,6 +144,7 @@ public class Enemy : MonoBehaviour {
             {
                 Destroy(col.gameObject);
                 gameObject.SetActive(false);
+                sceneController.overallScore = sceneController.overallScore + score;
 
                 if(enemyId==2)
                 {
