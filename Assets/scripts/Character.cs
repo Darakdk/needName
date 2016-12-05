@@ -103,7 +103,7 @@ public class Character : MonoBehaviour
 	{
 		keyRigth = Input.GetKey (KeyCode.D);
 		keyLeft = Input.GetKey (KeyCode.A);
-		jumpPressed = Input.GetKey (KeyCode.Space);
+		jumpPressed = Input.GetKey (KeyCode.Space) || Input.GetKey(KeyCode.W);
 
 		if (isAlive) {
 			myBody.transform.position = new Vector3 (0, myBody.transform.position.y, myBody.transform.position.z);

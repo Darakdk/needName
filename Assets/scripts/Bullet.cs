@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour {
         
         countDown = countDown - Time.deltaTime;
         if (countDown <= 0) {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
             }
     }
 
@@ -27,10 +27,10 @@ public class Bullet : MonoBehaviour {
         player = Character.playerPosition;
         myBody.velocity = myBody.transform.forward * bulletSpeed;
 
-        if(Physics.Raycast(transform.position+myBody.transform.forward*2, player, out hit, Vector3.Distance(myBody.position, player), groundMask))
+        if(Physics.Raycast(transform.position+myBody.transform.forward*2, player, Vector3.Distance(myBody.position, player), groundMask))
         {
             Instantiate(explosion, transform.position, transform.rotation);
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 

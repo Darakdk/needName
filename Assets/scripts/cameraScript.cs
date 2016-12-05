@@ -5,7 +5,7 @@ public class cameraScript : MonoBehaviour
 {
 
     public GameObject player;
-    public Camera camera;
+    public Camera cameratron;
     public float topOffset;
     public float depthOffset;
     public float leftOffset;
@@ -18,8 +18,8 @@ public class cameraScript : MonoBehaviour
     void Start()
     {
         player.GetComponent<GameObject>();
-        camera = GetComponent<Camera>();
-        positionCamera = camera.transform.position;
+        cameratron = GetComponent<Camera>();
+        positionCamera = cameratron.transform.position;
 
     }
 
@@ -27,6 +27,6 @@ public class cameraScript : MonoBehaviour
     void Update()
     {
         positionCamera = Vector3.Lerp(positionCamera, player.transform.position + Vector3.up * topOffset + Vector3.right * depthOffset + Vector3.forward * leftOffset, cameraFlow * Time.deltaTime);
-        camera.transform.position = positionCamera;
+        cameratron.transform.position = positionCamera;
     }
 }

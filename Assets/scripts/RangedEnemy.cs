@@ -4,7 +4,7 @@ using System.Collections;
 public class rangedEnemyScr: MonoBehaviour {
 
     private float distanceToPlayer;
-    private Enemy sn;
+    //private Enemy sn;
     public float shootRange;
     public GameObject bullet;
     private Vector3 targetPoint;
@@ -16,7 +16,7 @@ public class rangedEnemyScr: MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        sn = gameObject.GetComponent<Enemy>();
+        //sn = gameObject.GetComponent<Enemy>();
         fireRateR = 0;
         nRateR = nRate;
     }
@@ -29,7 +29,7 @@ public class rangedEnemyScr: MonoBehaviour {
         if (distanceToPlayer< shootRange && fireRateR == 0)
         {
             //This is the Rotation
-            Plane playerPlane = new Plane(Vector3.right, transform.position);
+            //Plane playerPlane = new Plane(Vector3.right, transform.position);
             targetPoint = player;
             Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position, Vector3.right);
             Instantiate(bullet, transform.position, targetRotation);
