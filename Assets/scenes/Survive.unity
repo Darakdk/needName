@@ -623,6 +623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 949621ae30d1a0b47b77b2a62fb2ea31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allowRestart: 0
   currentLevel: Puzzlelevel
   MainMenu: levelSelector
   pressRestart: 0
@@ -2093,9 +2094,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Press R to retry.
-
-    Press M to return to Main Menu.'
+  m_Text: Press M to return to Main Menu.
 --- !u!222 &2059816466
 CanvasRenderer:
   m_ObjectHideFlags: 0

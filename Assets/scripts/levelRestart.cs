@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class levelRestart : MonoBehaviour {
 
-	public string currentLevel;
+    public bool allowRestart = true;
+    public string currentLevel;
 	public string MainMenu;
 	public bool pressRestart = false;
     public GameObject character;
@@ -18,17 +19,19 @@ public class levelRestart : MonoBehaviour {
     void Update () {
 		pressRestart = Input.GetKey (KeyCode.R);
 		if(pressRestart){
-			Character.isAlive = true;
-            //SceneManager.LoadScene (currentLevel, LoadSceneMode.Single);
-            playerRenderer.SetActive(true);
-            cannonRenderer.SetActive(true);
-            playerDeathScreen.SetActive(false);
-            character.SetActive(true);
-            character.transform.position = Character.position;
-            sceneController.overallScore = checkPointSyst.checkpointScore;
-            foreach(Enemy enem in enemyList)
-            {
-                enem.returnToStart();
+			if (allowRestart == true) {
+                Character.isAlive = true;
+                //SceneManager.LoadScene (currentLevel, LoadSceneMode.Single);
+                playerRenderer.SetActive(true);
+                cannonRenderer.SetActive(true);
+                playerDeathScreen.SetActive(false);
+                character.SetActive(true);
+                character.transform.position = Character.position;
+                sceneController.overallScore = checkPointSyst.checkpointScore;
+                foreach (Enemy enem in enemyList)
+                {
+                    enem.returnToStart();
+                }
             }
 		}
 		pressRestart = Input.GetKey (KeyCode.M);

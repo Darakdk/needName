@@ -73,8 +73,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010204676262}
-  - 114: {fileID: 114000012264580684}
   - 135: {fileID: 135000011584743380}
+  - 114: {fileID: 114000011274962406}
   m_Layer: 0
   m_Name: spikeSpawner
   m_TagString: Untagged
@@ -128,7 +128,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013584378806}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -7.79, z: -27.23}
+  m_LocalPosition: {x: 0.010637313, y: 25.305143, z: -41.350002}
   m_LocalScale: {x: 2, y: 2, z: 0.5}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -281,7 +281,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114000012264580684
+--- !u!114 &114000011274962406
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -289,11 +289,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000014034531894}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bd8ea6c2ec4d6d4f96ee3790612b1ee, type: 3}
+  m_Script: {fileID: 11500000, guid: d03e821a97f6f314a9ed70c4a0a4ede4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdown: 3
-  projectile: {fileID: 1000010966410972, guid: 70bbaccf160beaa4f824ad3206498e0e, type: 2}
+  offset: 0
+  countdown: 0
+  projectile: {fileID: 1000010966410972, guid: 67442eea820c6384797a3944e418a027, type: 2}
   cannonActive: {fileID: 1000012159382490}
   cannonInactive: {fileID: 1000011964818876}
 --- !u!135 &135000011584743380
