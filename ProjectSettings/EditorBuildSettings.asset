@@ -15,3 +15,5 @@ EditorBuildSettings:
     path: Assets/scenes/Kill em All.unity
   - enabled: 1
     path: Assets/scenes/Travel Begings.unity
+  - enabled: 1
+    path: Assets/scenes/Survive.unity
