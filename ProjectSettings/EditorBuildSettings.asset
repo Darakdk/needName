@@ -8,8 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/scenes/levelSelector.unity
   - enabled: 1
-    path: Assets/scenes/Kill em All.unity
+    path: Assets/scenes/ShadowLevel.unity
   - enabled: 1
     path: Assets/scenes/Puzzlelevel.unity
   - enabled: 1
-    path: Assets/scenes/ShadowLevel.unity
+    path: Assets/scenes/Kill em All.unity
+  - enabled: 1
+    path: Assets/scenes/Travel Begings.unity
