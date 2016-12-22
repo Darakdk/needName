@@ -43,6 +43,8 @@ public class EnemyBossCuboid : MonoBehaviour {
     private bool phase2;
     public GameObject BossDoor;
     public static int score;
+    private int theHp;
+    private Vector3 initPos;
 
     // Use this for initialization
     void Start()
@@ -61,6 +63,8 @@ public class EnemyBossCuboid : MonoBehaviour {
         phase2 = false;
         phase2TimerR = phase2Timer;
         phase2DurR = phase2Dur;
+        theHp = hp;
+        initPos = myBody.transform.position;
 }
 
     // Update is called once per frame
@@ -193,6 +197,22 @@ public class EnemyBossCuboid : MonoBehaviour {
         }
     }
 
+    private void Update()
+    {
+        bool pressRestart = Input.GetKey(KeyCode.R);
+        if (pressRestart)
+        {
+            bossActive = false;
+            hp = theHp;
+            myBody.transform.position = initPos;
+            phase2 = false;
+            phase2TimerR = phase2Timer;
+            phase2DurR = phase2Dur;
+            hasDirectVision = false;
+            atackOneTimer = atackOneRate + Random.Range(0, 100);
+            jumpDelayR = jumpDelay;
+        }
+    }
 
     private void checkGround()
     {
