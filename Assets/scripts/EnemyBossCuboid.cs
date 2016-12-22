@@ -143,7 +143,6 @@ public class EnemyBossCuboid : MonoBehaviour {
                 if (atackOneTimer <= 0) {
 
                     Instantiate(atackOnePart, player, transform.rotation);
-                    print("Hi im trying");
                     Instantiate(atackOne, new Vector3(player.x, player.y + 40, player.z), transform.rotation);
 
                     atackOneTimer = atackOneRate + Random.Range(-100, 100);
