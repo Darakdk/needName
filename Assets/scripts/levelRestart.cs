@@ -37,6 +37,7 @@ public class levelRestart : MonoBehaviour {
 		pressRestart = Input.GetKey (KeyCode.M);
 		if(pressRestart){
 			SceneManager.LoadScene (MainMenu, LoadSceneMode.Single);
+            enemyList.Clear();
 		}
 	}
 
